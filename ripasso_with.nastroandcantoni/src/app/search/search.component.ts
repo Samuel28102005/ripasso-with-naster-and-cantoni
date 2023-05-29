@@ -12,17 +12,15 @@ birra!: string
 obsbirra !: Observable <Root>
 ris !: Root
 
-
-
 constructor(public http:HttpClient){
 
 }
 
 
 
-cerca(query:HTMLInputElement){
-  this.birra = query.value
-  this.obsbirra=this.http.get<Root>(`https://api.punkapi.com/v2/beers?beer_name=${query}`)
+cerca(birra:HTMLInputElement){
+  this.birra = birra.value
+  this.obsbirra=this.http.get<Root>(`https://api.punkapi.com/v2/beers?beer_name=${this.birra}`)
   this.obsbirra.subscribe((data:Root)=>{this.ris=data})
 }
 

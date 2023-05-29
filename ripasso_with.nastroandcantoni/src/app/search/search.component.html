@@ -1,0 +1,7 @@
+<input type="text" #birra> 
+<button (click)="cerca(birra)">search</button>
+<div *ngFor="let b of ris">
+    <a routerLink="/item/{{b.id}}">{{b.id}}</a>
+    <img src="{{b.image_url}}">
+
+</div>
